@@ -19,7 +19,7 @@ router.use(bodyParser.urlencoded({limit: 2500000, extended: false}))
    * @Route /api/v1/app/normal/terminal/cred/:typ:ctoken
    * CRED LOGIN DASHBOARD
    */
-  router.post('/pin/:typ/:ctoken', async (req,res)=>{
+  router.post('/cred/:typ/:ctoken', async (req,res)=>{
     //CHECK IF CONNECTION ALLOWED ELSE RETURN 500
     const connectorTokenft = req.params.ctoken;
     if(lib.checkConnectionHeader(connectorTokenft)==true){
