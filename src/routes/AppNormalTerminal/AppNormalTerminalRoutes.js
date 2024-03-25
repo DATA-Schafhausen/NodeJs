@@ -44,6 +44,13 @@ const Pin=require('./Login/Logforms/Pin');
  */
 router.use('/normal/terminal', Pin);  
 
+const Cred=require('./Login/Logforms/Cred'); 
+/**
+ * LOGIN FORMEN ROUTES
+ * Cred : normal/terminal/Cred/:typ/:ctoken
+ */
+router.use('/normal/terminal', Cred);  
+
 
 /**
  * ZU ERGÄNZEN BEI LOGIN FORMEN
