@@ -4,12 +4,7 @@ const http = require('http');
 const app = express();
 const lib = require('./src/Utils/connectorHeader'); 
 const server = http.createServer(app);
-const io=require('socket.io')(server, {
-  cors: {
-    origin: "https://itsnando.com",
-		methods: [ "GET", "POST" ]
-	}
-})
+const io=require('socket.io')(server)
 const PORT = 3000;
 app.use(cors()) 
 /**
