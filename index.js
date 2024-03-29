@@ -4,14 +4,14 @@ const http = require('http');
 const app = express();
 const lib = require('./src/Utils/connectorHeader'); 
 const server = http.createServer(app);
+const PORT = 3000;
+app.use(cors()) 
 const io=require('socket.io')(server, {
 	cors: {
 		origin: "*",
 		methods: [ "GET", "POST" ]
 	}
 })
-const PORT = 3000;
-app.use(cors()) 
 /**
  * USE REDIRECT
  */
@@ -72,7 +72,7 @@ app.use('/api/v1/app', AppNormalTerminalRoutes);
 ------------------------------------------------------------------------------------------------------------*/
 /* //////////////////////////////////////////////////////////////////////////////////////////////////////////
 * IMPORTS */  
-const rooms={}
+
 require('./src/routes/Websockets/ChatWidget/ChatWidget')(io);
  
 
