@@ -73,5 +73,5 @@ require('./src/routes/Websockets/ChatWidget/ChatWidget')(io);
 
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT+5}`);   
+  console.log(`Server is running on port ${PORT}`);   
 });
