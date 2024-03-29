@@ -6,7 +6,7 @@ const lib = require('./src/Utils/connectorHeader');
 const server = http.createServer(app);
 const io=require('socket.io')(server, {
   cors: {
-    origin: "*",
+    origin: "https://itsnando.com",
 		methods: [ "GET", "POST" ]
 	}
 })

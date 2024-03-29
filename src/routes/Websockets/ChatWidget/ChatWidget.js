@@ -2,7 +2,7 @@
 const func = require('./RoomManager')
 module.exports = function(io) {
     io.on('connection', (socket) => {
-      socket.emit('connection', 'connected ')
+      socket.emit('connection', 'socket connected ')
       //socket.on('connect_on_unit_room', (unitId,userId,uname) => {
         // Handle subscribing to notifications for a user
         //const room=getUnitRoom(unitId)
