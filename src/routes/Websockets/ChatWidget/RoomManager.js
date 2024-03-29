@@ -4,7 +4,7 @@ const rooms={}
  * @param {*} unitId UNIT UUID 
  * @returns Room 
  */
-export function getUnitRoom(unitId){
+const getUnitRoom=(unitId)=>{
     if(!rooms[unitId]){
         rooms[unitId]={}
     }
@@ -16,7 +16,7 @@ export function getUnitRoom(unitId){
  * @param {*} userId 
  * @returns 
  */
-export function checkUser(unitId,userId){
+const checkUser=(unitId,userId)=>{
     const is=rooms[unitId][userId]?true:false
     return is
 }
@@ -26,7 +26,7 @@ export function checkUser(unitId,userId){
  * @param {*} userId 
  * @param {*} uname 
  */
-export function addUserToUnitRoom(unitId,userId,uname){
+const addUserToUnitRoom=(unitId,userId,uname)=>{
     if(!rooms[unitId]){
         rooms[unitId]={}
     }
@@ -46,7 +46,7 @@ export function addUserToUnitRoom(unitId,userId,uname){
         disconnectTime:0
     }
 }
-export function disconnectUserFromChart(unitId,userId,uname){
+const disconnectUserFromChart=(unitId,userId,uname)=>{
     if(!rooms[unitId]){
         rooms[unitId]={}
     }
@@ -65,3 +65,4 @@ export function disconnectUserFromChart(unitId,userId,uname){
         disconnectTime:new Date().getTime()
     } 
 }
+module.exports ={getUnitRoom,checkUser,addUserToUnitRoom,disconnectUserFromChart}
