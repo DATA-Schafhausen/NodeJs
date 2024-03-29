@@ -67,8 +67,10 @@ app.use('/api/v1/app', AppNormalTerminalRoutes);
 ------------------------------------------------------------------------------------------------------------*/
 /* //////////////////////////////////////////////////////////////////////////////////////////////////////////
 * IMPORTS */   
-require('./src/routes/Websockets/ChatWidget/ChatWidget')(io);
- 
+//require('./src/routes/Websockets/ChatWidget/ChatWidget')(io);
+io.on('connection',socket =>{  
+  io.emit('connection','you are connected')
+})
 
 
 
