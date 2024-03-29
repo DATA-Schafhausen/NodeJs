@@ -2,9 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const http = require('http');
 const app = express();
-const lib = require('./src/Utils/connectorHeader'); 
-const server = http.createServer(app);
-const io=require('socket.io')(server)
+const lib = require('./src/Utils/connectorHeader');  
 const PORT = 3000;
 app.use(cors()) 
 /**
@@ -60,17 +58,7 @@ const AppNormalTerminalRoutes=require('./src/routes/AppNormalTerminal/AppNormalT
  * ROUTES */
 app.use('/api/v1/app', AppNormalTerminalRoutes);
 
-/**-----------------------------------------------------------------------------------------------------------
- * //////////////////////////////////////////////////////////////////////////////////////////////////////////
- *  START   WEBSOCKET ROUTES
- * //////////////////////////////////////////////////////////////////////////////////////////////////////////
-------------------------------------------------------------------------------------------------------------*/
-/* //////////////////////////////////////////////////////////////////////////////////////////////////////////
-* IMPORTS */   
-//require('./src/routes/Websockets/ChatWidget/ChatWidget')(io);
-io.on('connection',socket =>{  
-  io.emit('connection','you are connected')
-})
+ 
 
 
 
