@@ -8,7 +8,7 @@ const PORT = 3000;
 app.use(cors()) 
 const io=require('socket.io')(server, {
 	cors: {
-		origin: "*",
+		origin: "https://itsnando.com",
 		methods: [ "GET", "POST" ]
 	}
 })
