@@ -60,8 +60,7 @@ const AppNormalTerminalRoutes=require('./src/routes/AppNormalTerminal/AppNormalT
 app.use('/api/v1/app', AppNormalTerminalRoutes);
 
  
-
-console.log(process.env.TEST)
+ 
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);   
