@@ -1,7 +1,6 @@
 const express = require('express'); 
 const cors = require('cors');
-const http = require('http');
-require('dotenv').config()
+const http = require('http'); 
 const app = express();
 const lib = require('./src/Utils/connectorHeader');  
 const PORT = 3000;
