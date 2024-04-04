@@ -1,6 +1,7 @@
 const express = require('express'); 
 const cors = require('cors');
 const http = require('http');
+require('dotenv').config()
 const app = express();
 const lib = require('./src/Utils/connectorHeader');  
 const PORT = 3000;
@@ -60,7 +61,7 @@ app.use('/api/v1/app', AppNormalTerminalRoutes);
 
  
 
-
+console.log(process.env.TEST)
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);   
