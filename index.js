@@ -25,7 +25,7 @@ app.use(function(req,res,next){
 const MessageCenterRouter= require('./src/routes/MessageCenter/MessageCenterRouter');
 /* //////////////////////////////////////////////////////////////////////////////////////////////////////////
  * ROUTES */
-app.use('/api/v1/mc/', MessageCenterRouter);
+app.use('/api/v1/mc', MessageCenterRouter);
 
 
 
