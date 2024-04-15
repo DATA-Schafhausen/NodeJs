@@ -80,6 +80,8 @@ Link: https://dull-lime-bull-gown.cyclic.app
 |   POST | <pre><code>/api/v1/controller/route/terminals/:typ/:stid/:ctoken</code></pre>         | TERMINAL                                | 
 |   POST | <pre><code>/api/v1/controller/route/einstellungen/:typ/:stid/:ctoken</code></pre>     | SETTINGS                                | 
 </details>
+
+
 <details>
 <summary>
 |     APP ROUTES | 
@@ -94,4 +96,20 @@ Link: https://dull-lime-bull-gown.cyclic.app
 |   POST | <pre><code>/api/v1/app/normal/terminal/pin/:typ/:ctoken</code></pre>                  | PIN LOGIN                               |  
 |   POST | <pre><code>/api/v1/app/normal/terminal/cred/:typ/:ctoken</code></pre>                 | CRED LOGIN                              |  
 |   POST | <pre><code>/api/v1/app/normal/terminal/track/:typ/:ctoken</code></pre>                | TIMETRACKING                            |  
+</details>
+
+
+<details>
+<summary>
+|     MESSAGE-CENTER ROUTES | 
+</summary>
+
+
+  ## LOGIN 
+
+| METHOD |                                                         ROUTE | DESCRIPTION                             |
+| -----: | ------------------------------------------------------------: | --------------------------------------: |
+|   POST | <pre><code>/api/v1/mc/route/login/:typ/:ctoken</code></pre>   | ACTIVATE,IMPORT,VERIFY                  | 
+
+
 </details>
