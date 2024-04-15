@@ -37,7 +37,7 @@ router.use(bodyParser.urlencoded({limit: 2500000, extended: false}))
               JSON.stringify({ 
                 T:querytype,  
                 E:EncData.E,
-                I:req.header('x-forwarded-for')?req.header('x-forwarded-for').split(',')[0]:(req.socket.remoteAddress?req.socket.remoteAddress:IP.address()),//req.socket.remoteAddress,
+                I:IP.address()?IP.address():req.header('x-forwarded-for')?req.header('x-forwarded-for'):req.socket.remoteAddress,//req.socket.remoteAddress,
                 F:EncData.F?EncData.F:'',
                 XFRC: connectorToken }),
               customConfig);
