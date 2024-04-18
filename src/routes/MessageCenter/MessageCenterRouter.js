@@ -14,10 +14,12 @@ router.use(function(req,res,next){
 /**
  * IMPORT SUB-ROUTES
  */
-const LoginHandler=require('./LoginHandler/LoginHandler');           
+const LoginHandler=require('./LoginHandler/LoginHandler');   
+const ContextHandler=require('./ContextCalls/ContextCalls');        
 /**
  * SUB-ROUTING
  */
 router.use('/route/login', LoginHandler);     
+router.use('/route/context', ContextHandler);     
   
 module.exports = router;
