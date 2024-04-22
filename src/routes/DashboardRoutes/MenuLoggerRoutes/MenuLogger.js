@@ -19,7 +19,7 @@ router.use(bodyParser.urlencoded({limit: 2500000, extended: false}))
    * @Route /api/v1/dashboard/track/timetouch/QueryTyp
    * URLAUB WIDGET
    */
-  router.post('/mlogger/:typ/:ctoken', async (req,res)=>{
+  router.post('/logger/:typ/:ctoken', async (req,res)=>{
     //CHECK IF CONNECTION ALLOWED ELSE RETURN 500
     const connectorTokenft = req.params.ctoken;
     if(lib.checkConnectionHeader(connectorTokenft)==true){
