@@ -118,6 +118,6 @@ Link: https://dull-lime-bull-gown.cyclic.app
 
 | METHOD |                                                         ROUTE | DESCRIPTION                             |
 | -----: | ------------------------------------------------------------: | --------------------------------------: |
-|   POST | <pre><code>/api/v1/mc/route/correctionrequests/:typ/:ctoken</code></pre>   | CORRECTION INQUIRIES                  |  
+|   POST | <pre><code>/api/v1/mc/route/correctionrequests/:typ/:ctoken</code></pre>   | CORRECTION INQUIRIES       |  
 
 </details>
