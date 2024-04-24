@@ -18,7 +18,7 @@ const LoginHandler=require('./LoginHandler/LoginHandler');
 const KorrekturenHandler=require('./KorrekturenHandler/KorrekturenHandler');   
 const ContextHandler=require('./ContextCalls/ContextCalls');        
 /**
- * SUB-ROUTING
+ * SUB-ROUTING  
  */
 router.use('/route/login', LoginHandler);     
 router.use('/route/context', ContextHandler);     
