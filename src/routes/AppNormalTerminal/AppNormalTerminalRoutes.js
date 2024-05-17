@@ -10,21 +10,8 @@ router.use(function(req,res,next){
     res.header('Access-Control-Allow-Methods', 'POST, HEAD, GET, OPTIONS');
     next();
 }); 
-/**
- * ACTIVIERUNG
- * IMPORT
- * VERIFY
- */
-const Login=require('./Login/Login'); 
-/**
- * ACTIVIERUNG
- * IMPORT
- * VERIFY
- * ROUTES
- * ROUTE normal/terminal/login/:typ/:ctoken
- */
-router.use('/normal/terminal', Login);  
-//router.use('extended/terminal', Login);  
+
+
 
 const Track=require('./TimeTracking/TimeTracking'); 
 /**
@@ -33,6 +20,26 @@ const Track=require('./TimeTracking/TimeTracking');
  */
 router.use('/normal/terminal', Track);  
 
+
+const Auswertung=require('./Auswertung/Auswertung'); 
+/**
+ * AUSWERTUNG ROUTES
+ * Auswertung: normal/terminal/Auswertung/:typ/:ctoken
+ */
+router.use('/normal/terminal', Auswertung);  
+
+
+
+const Login=require('./Login/Login'); 
+/**
+ * AKTIVIERUNG
+ * IMPORT
+ * VERIFY
+ * ROUTES
+ * ROUTE normal/terminal/login/:typ/:ctoken
+ */
+router.use('/normal/terminal', Login);  
+//router.use('extended/terminal', Login);  
 
 /**
  * LOGIN FORMEN
@@ -52,45 +59,5 @@ const Cred=require('./Login/Logforms/Cred');
 router.use('/normal/terminal', Cred);  
 
 
-/**
- * ZU ERGÄNZEN BEI LOGIN FORMEN
- * NFC LOGIN 
- * QR-CODE LOGIN
- * BLUETHOOT LOGIN
- * CREDETIALS LOGIN
- * 
- * SOLLTE NUR EIN USER AUF DAS GERÄT VERLINKT SEIN; KANN LOGIN AUSGESETZT WERDEN: SOMIT ERSTE ABFRAGE ANCH VERIFIZIERUNG DES GERÄTS GILT IMMER DIE ANZAHL DER   
- * VERLINKTEN PERSONEN FÜR DEN TERMINAL ABZUFRAGEN
- * 
- * DANACH DEN GERÄTEZUSTAND; OB DAS GERÄT DEAKTIVIERT WURDE ODER AKTIV IST
- * 
- * NACH LOGIN KOMMT DASHBOARD
- * 
- * DASHBOARD ODER HAUPTBEREICH 
- * GERÄTE ANSICHT IMMER GANZ OBEN
- *  ->BEINHALTET LOGO TIMESHIFT + NAME
- *  ->DEVICENAME => GERÄTENAME
- *  ->GERÄTEKENNUNG => STRING
- *  ->DEVICE-STATUS OB ENABLED ODER DISABLED
- * 
- * ZEITERFASSUNG INTERFACE
- *  ->STEMPELFUNKTIONEN
- *  ->LOCATION FUNKTION
- *  ->BEMERKUNGENFUNKTION
- * 
- * URLAUBPLANUNG
- *  ->ANSICHT STATISTIK UND ANTRAG ÜBERSICHT
- *  ->ANTRAG STELLEN
- * 
- * ZEITANALYSE MONATLICH
- *  ->ANZEIGE ÄHNLICH WIE IM WEB
- * 
- * ZEITKONTO
- *  ->ÜBERSICHT
- *  ->URLAUB ODER AUSZAHLUNG BEANTRAGEN
- * 
- * PROFIL
- *  ->NACHRICHTEN
- */
 
 module.exports = router;

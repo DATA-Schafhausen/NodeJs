@@ -16,10 +16,10 @@ router.use(bodyParser.json({limit: 2500000}))
 router.use(bodyParser.urlencoded({limit: 2500000, extended: false}))
 
   /**
-   * @Route /api/v1/app/normal/terminal/login/:ctoken
-   * Login and Terminal Installation
+   * @Route /api/v1/app/normal/terminal/auswertung/:ctoken
+   * Dashboard Auswertung
    */
-  router.post('/login/:typ/:ctoken', async (req,res)=>{
+  router.post('/auswertung/:typ/:ctoken', async (req,res)=>{
     //CHECK IF CONNECTION ALLOWED ELSE RETURN 500
     const connectorTokenft = req.params.ctoken;
     if(lib.checkConnectionHeader(connectorTokenft)==true){
@@ -33,7 +33,7 @@ router.use(bodyParser.urlencoded({limit: 2500000, extended: false}))
               })            
             };
             const response = await axios.post(
-              `${Domaine}/backend/API/ucontroller/appTerminal/UAppTerminalInstallation.php`,
+              `${Domaine}/backend/API/ucontroller/appTerminal/UAppAuswertung.php`,
               JSON.stringify({ 
                 T:querytype,  
                 E:EncData.E,
