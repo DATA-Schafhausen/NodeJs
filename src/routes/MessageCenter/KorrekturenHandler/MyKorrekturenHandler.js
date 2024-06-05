@@ -34,7 +34,7 @@ router.use(bodyParser.urlencoded({limit: 2500000, extended: false}))
               })            
             };
             const response = await axios.post(
-              `${Domaine}/backend/API/mcenter/korrekturen/MCKorrekturen.php`,
+              `${Domaine}/backend/API/mcenter/mykorrekturen/MYKorrekturen.php`,
               JSON.stringify({ 
                 T:querytype,  
                 E:EncData.E,
