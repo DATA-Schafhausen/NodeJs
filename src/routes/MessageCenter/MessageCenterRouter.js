@@ -24,6 +24,6 @@ const ContextHandler=require('./ContextCalls/ContextCalls');
 router.use('/route/login', LoginHandler);     
 router.use('/route/context', ContextHandler);     
 router.use('/route/correctionrequests', KorrekturenHandler);     
-router.use('/route/mycorrectionrequests', MyKorrekturenHandler);     
-  
+router.use('/route/mycorrections', MyKorrekturenHandler);     
+
 module.exports = router;
