@@ -20,7 +20,7 @@ const MyKorrekturenHandler=require('./KorrekturenHandler/MyKorrekturenHandler');
 const ContextHandler=require('./ContextCalls/ContextCalls');        
 /**
  * SUB-ROUTING  
- */
+ */ 
 router.use('/route/login', LoginHandler);     
 router.use('/route/context', ContextHandler);     
 router.use('/route/correctionrequests', KorrekturenHandler);     
