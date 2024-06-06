@@ -21,6 +21,6 @@ const getConnectionHeader=()=>{
   return Arr[r].toString();
 }
 const getDomain=()=>{
-  return "https://itsnando.com";
+  return "https://timeshift.data-schafhausen.com";
 }
 module.exports = { checkConnectionHeader, getConnectionHeader,getDomain };
