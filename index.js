@@ -56,6 +56,7 @@ app.use('/api/v1/weblogin', Login); //------------------------------------------
 app.use('/api/v1/dashboard', Widgets); //-------------------------------------> DASHBOARD
 app.use('/api/v1/profile', Profile); //---------------------------------------> PROFILE
 app.use('/api/v1/controller', AdminRouter); //--------------------------------> ADMIN  
+app.use('/test', "Hello"); //--------------------------------> ADMIN  
 
 
 
