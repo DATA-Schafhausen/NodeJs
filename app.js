@@ -57,7 +57,7 @@ app.use('/api/v1/dashboard', Widgets); //-------------------------------------> 
 app.use('/api/v1/profile', Profile); //---------------------------------------> PROFILE
 app.use('/api/v1/controller', AdminRouter); //--------------------------------> ADMIN  
 
-app.use('/test',(req,res)=>{
+app.get('/test',(req,res)=>{
   res.send("hello")
 })
 
