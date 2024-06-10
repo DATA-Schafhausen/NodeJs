@@ -36,7 +36,5 @@ router.use('/route/vertrag', Vertrag);
 router.use('/route/terminals', Terminals);  
 //router.use('/route/auswertung', Auswertung);  
 router.use('/route/einstellungen', Einstellungen);  
-router.get('/route/auswertung',(req,res)=>{
-    res.send("hello test neu ")
-  })  
+router.get('/route/auswertung',Auswertung)  
 module.exports = router;

@@ -18,7 +18,7 @@ router.use(bodyParser.urlencoded({ extended: false }))
    * @Route /api/v1/Abteilung/connectorToken
    * GET STANDORTE,ABTEILUNG,BEREICHE,GRUPPEN,TEAMS,MITARBEITER,
    */
-  router.get('/:typ/:ctoken', async (req,res)=>{
+  router.get('/:typ/:ctoken', (req,res)=>{
     //CHECK IF CONNECTION ALLOWED ELSE RETURN 500
     res.send("hallo worked")/*
     const connectorTokenft = req.params.ctoken;
