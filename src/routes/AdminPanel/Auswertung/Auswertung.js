@@ -18,19 +18,16 @@ router.use(bodyParser.urlencoded({ extended: false }))
    * @Route /api/v1/Abteilung/connectorToken
    * GET STANDORTE,ABTEILUNG,BEREICHE,GRUPPEN,TEAMS,MITARBEITER,
    */
-  router.get('/route/test',(req,res)=>{
-    res.send("hello test neu ")
-  })  
-  /*router.get('/:typ/:ctoken', (req,res)=>{
+   
+  router.get('/:typ/:ctoken', async (req,res)=>{
     //CHECK IF CONNECTION ALLOWED ELSE RETURN 500
-    res.send("hallo worked")
     const connectorTokenft = req.params.ctoken;
     if(lib.checkConnectionHeader(connectorTokenft)==true){
       const EncData = req.body; 
-      
-      try{
-              const querytype = req.params.typ;
-              const stid = req.params.stid;
+      const querytype = req.params.typ; 
+      console.log(querytype)
+      res.send("hallo worked inner")
+      /*try{
               const connectorToken=lib.getConnectionHeader();
             const customConfig = {
               headers: new Headers({
@@ -58,12 +55,12 @@ router.use(bodyParser.urlencoded({ extended: false }))
             }
         }catch(error){
             res.status(500).json({error:'Internal Server Error'});
-        }
+        }*/
     }else{
         res.status(500).json({error:'Internal Server Error'});
     }
      
-  });*/
+  });
   
   
   module.exports = router;
