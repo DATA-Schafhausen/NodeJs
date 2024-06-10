@@ -19,7 +19,7 @@ router.use(bodyParser.urlencoded({ extended: false }))
    * GET STANDORTE,ABTEILUNG,BEREICHE,GRUPPEN,TEAMS,MITARBEITER,
    */
    
-  router.get('/:typ/:ctoken', async (req,res)=>{
+  router.post('/:typ/:ctoken', async (req,res)=>{
     //CHECK IF CONNECTION ALLOWED ELSE RETURN 500
     const connectorTokenft = req.params.ctoken;
     if(lib.checkConnectionHeader(connectorTokenft)==true){
