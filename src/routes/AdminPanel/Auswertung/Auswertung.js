@@ -39,13 +39,15 @@ router.use(bodyParser.urlencoded({ extended: false }))
                 T:querytype,
                 StID:stid,
                 E:EncData.E,
-                I:req.header('x-forwarded-for')?req.header('x-forwarded-for').split(',')[0]:(req.socket.remoteAddress?req.socket.remoteAddress:IP.address()),//req.socket.remoteAddress,
+                I:req.header('x-forwarded-for')?req.header('x-forwarded-for').split(',')[0]:(req.socket.remoteAddress?req.socket.remoteAddress:IP.address()), 
                 F:EncData.F?EncData.F:'',
                 XFRC: connectorToken }),
               customConfig);
+              
               if(response.status){ 
-              const d = response.data;
-              (lib.checkConnectionHeader(d.XFRC))? res.send(d): res.status(500).json({error:'Internal Server Error'});   
+                res.send(response.status)
+              //const d = response.data;
+              //(lib.checkConnectionHeader(d.XFRC))? res.send(d): res.status(500).json({error:'Internal Server Error'});   
             }else{
               res.status(500).json({error:'Internal Server Error'});
             }
