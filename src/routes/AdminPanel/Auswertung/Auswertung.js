@@ -21,7 +21,8 @@ router.use(bodyParser.urlencoded({ extended: false }))
    
   router.post('/:typ/:ctoken', async (req,res)=>{
     //CHECK IF CONNECTION ALLOWED ELSE RETURN 500
-    const connectorTokenft = req.params.ctoken;
+    res.status(200).json({error:'Iiadsjds'})
+    /*const connectorTokenft = req.params.ctoken;
     if(lib.checkConnectionHeader(connectorTokenft)==true){
       const EncData = req.body; 
       const querytype = req.params.typ; 
@@ -55,10 +56,10 @@ router.use(bodyParser.urlencoded({ extended: false }))
             }
         }catch(error){
             res.status(500).json({error:'Internal Server Error'});
-        }*/
+        } 
     }else{
         res.status(500).json({error:'Internal Server Error'});
-    }
+    }*/
      
   });
   
