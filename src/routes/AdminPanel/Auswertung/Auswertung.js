@@ -31,8 +31,7 @@ router.use(bodyParser.urlencoded({ extended: false }))
               headers: new Headers({
               'Content-Type': 'application/json',
               })            
-            };
-            res.send(JSON.stringify("OK"))
+            }; 
             const response = await axios.post(
               `${Domaine}/backend/API/ucontroller/adminpanel/UAdminAuswertung.php`,
               JSON.stringify({ 
