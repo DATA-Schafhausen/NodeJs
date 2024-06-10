@@ -21,9 +21,9 @@ router.use(bodyParser.urlencoded({ extended: false }))
   router.get('/route/test',(req,res)=>{
     res.send("hello test neu ")
   })  
-  router.get('/:typ/:ctoken', (req,res)=>{
+  /*router.get('/:typ/:ctoken', (req,res)=>{
     //CHECK IF CONNECTION ALLOWED ELSE RETURN 500
-    res.send("hallo worked")/*
+    res.send("hallo worked")
     const connectorTokenft = req.params.ctoken;
     if(lib.checkConnectionHeader(connectorTokenft)==true){
       const EncData = req.body; 
@@ -62,8 +62,8 @@ router.use(bodyParser.urlencoded({ extended: false }))
     }else{
         res.status(500).json({error:'Internal Server Error'});
     }
-     */
-  });
+     
+  });*/
   
   
   module.exports = router;
