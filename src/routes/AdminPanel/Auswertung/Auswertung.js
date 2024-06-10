@@ -33,7 +33,8 @@ router.use(bodyParser.urlencoded({ extended: false }))
               'Content-Type': 'application/json',
               })            
             };
-            const response = await axios.post(
+            res.send(JSON.stringify("OK"))
+            /*const response = await axios.post(
               `${Domaine}/backend/API/ucontroller/adminpanel/UAdminAuswertung.php`,
               JSON.stringify({ 
                 T:querytype,
@@ -50,7 +51,7 @@ router.use(bodyParser.urlencoded({ extended: false }))
               //(lib.checkConnectionHeader(d.XFRC))? res.send(d): res.status(500).json({error:'Internal Server Error'});   
             }else{
               res.status(500).json({error:'Internal Server Error'});
-            }
+            }*/
         }catch(error){
             res.status(500).json({error:'Internal Server Error'});
         }
