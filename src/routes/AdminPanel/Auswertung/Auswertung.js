@@ -18,8 +18,9 @@ router.use(bodyParser.urlencoded({ extended: false }))
    * @Route /api/v1/Abteilung/connectorToken
    * GET STANDORTE,ABTEILUNG,BEREICHE,GRUPPEN,TEAMS,MITARBEITER,
    */
-  router.post('/:typ/:ctoken', async (req,res)=>{
+  router.get('/:typ/:ctoken', async (req,res)=>{
     //CHECK IF CONNECTION ALLOWED ELSE RETURN 500
+    res.send('hallo worked')/*
     const connectorTokenft = req.params.ctoken;
     if(lib.checkConnectionHeader(connectorTokenft)==true){
       const EncData = req.body; 
@@ -34,7 +35,7 @@ router.use(bodyParser.urlencoded({ extended: false }))
               })            
             };
             res.send(JSON.stringify("OK"))
-            /*const response = await axios.post(
+            const response = await axios.post(
               `${Domaine}/backend/API/ucontroller/adminpanel/UAdminAuswertung.php`,
               JSON.stringify({ 
                 T:querytype,
@@ -51,14 +52,14 @@ router.use(bodyParser.urlencoded({ extended: false }))
               //(lib.checkConnectionHeader(d.XFRC))? res.send(d): res.status(500).json({error:'Internal Server Error'});   
             }else{
               res.status(500).json({error:'Internal Server Error'});
-            }*/
+            }
         }catch(error){
             res.status(500).json({error:'Internal Server Error'});
         }
     }else{
         res.status(500).json({error:'Internal Server Error'});
     }
-     
+     */
   });
   
   
