@@ -34,7 +34,7 @@ router.use('/route/teams', Teams);
 router.use('/route/mitarbeiter', Mitarbeiter);  
 router.use('/route/vertrag', Vertrag);  
 router.use('/route/terminals', Terminals);  
-//router.use('/route/auswertung', Auswertung);  
+router.use('/route/auswertung', Auswertung);  
 router.use('/route/einstellungen', Einstellungen);  
-router.get('/route/auswertung',Auswertung)  
+
 module.exports = router;
