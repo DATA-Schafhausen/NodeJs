@@ -20,7 +20,7 @@ router.use(bodyParser.urlencoded({ extended: false }))
    */
   router.get('/:typ/:ctoken', async (req,res)=>{
     //CHECK IF CONNECTION ALLOWED ELSE RETURN 500
-    res.send('hallo worked')/*
+    res.send("hallo worked")/*
     const connectorTokenft = req.params.ctoken;
     if(lib.checkConnectionHeader(connectorTokenft)==true){
       const EncData = req.body; 
