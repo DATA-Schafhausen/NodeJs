@@ -20,16 +20,13 @@ router.use(bodyParser.urlencoded({ extended: false }))
    */
    
   router.post('/:typ/:ctoken', async (req,res)=>{
-    //CHECK IF CONNECTION ALLOWED ELSE RETURN 500
-    res.status(200).json({error:'Iiadsjds'})
-    /*const connectorTokenft = req.params.ctoken;
+    //CHECK IF CONNECTION ALLOWED ELSE RETURN 500 
+    const connectorTokenft = req.params.ctoken;
     if(lib.checkConnectionHeader(connectorTokenft)==true){
       const EncData = req.body; 
       const querytype = req.params.typ; 
-      console.log(querytype)
-      res.send("hallo worked inner")
-      /*try{
-              const connectorToken=lib.getConnectionHeader();
+      const connectorToken=lib.getConnectionHeader();
+      try{
             const customConfig = {
               headers: new Headers({
               'Content-Type': 'application/json',
@@ -47,10 +44,9 @@ router.use(bodyParser.urlencoded({ extended: false }))
                 XFRC: connectorToken }),
               customConfig);
               
-              if(response.status){ 
-                res.send(response.status)
-              //const d = response.data;
-              //(lib.checkConnectionHeader(d.XFRC))? res.send(d): res.status(500).json({error:'Internal Server Error'});   
+            if(response.status){ 
+               const d = response.data;
+              (lib.checkConnectionHeader(d.XFRC))? res.send(d): res.status(500).json({error:'Internal Server Error'});   
             }else{
               res.status(500).json({error:'Internal Server Error'});
             }
@@ -59,7 +55,7 @@ router.use(bodyParser.urlencoded({ extended: false }))
         } 
     }else{
         res.status(500).json({error:'Internal Server Error'});
-    }*/
+    }
      
   });
   
