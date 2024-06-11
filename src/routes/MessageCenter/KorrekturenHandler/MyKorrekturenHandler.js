@@ -25,7 +25,7 @@ router.use(bodyParser.urlencoded({limit: 2500000, extended: false}))
     const connectorTokenft = req.params.ctoken;
     if(lib.checkConnectionHeader(connectorTokenft)==true){
       const EncData = req.body;       
-      try{
+      //try{
             const querytype = req.params.typ; 
             const connectorToken=lib.getConnectionHeader();
             const customConfig = {
@@ -50,9 +50,9 @@ router.use(bodyParser.urlencoded({limit: 2500000, extended: false}))
             }else{
               res.status(500).json({error:'Nook'});
             }
-        }catch(error){
+       /* }catch(error){
             res.status(500).json({error:'Trycatch'});
-        }
+        }*/
     }else{
         res.status(500).json({error:'ConnectionHeader'});
     }
