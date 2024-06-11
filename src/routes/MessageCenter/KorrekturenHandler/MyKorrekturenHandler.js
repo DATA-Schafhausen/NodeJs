@@ -33,7 +33,13 @@ router.use(bodyParser.urlencoded({limit: 2500000, extended: false}))
               'Content-Type': 'application/json',
               })            
             };
-            const response = await axios.post(
+            res.send(JSON.stringify({ 
+              T:querytype,  
+              E:EncData.E,
+              I:req.header('x-forwarded-for')?req.header('x-forwarded-for').split(',')[0]:(req.socket.remoteAddress?req.socket.remoteAddress:IP.address()),//req.socket.remoteAddress, 
+              F:EncData.F?EncData.F:'',
+              XFRC: connectorToken }))
+            /*const response = await axios.post(
               `${Domaine}/backend/API/mcenter/mykorrekturen/MYKorrekturen.php`,
               JSON.stringify({ 
                 T:querytype,  
@@ -44,7 +50,7 @@ router.use(bodyParser.urlencoded({limit: 2500000, extended: false}))
               customConfig);
             //QUERY SUCCESSFUL
              res.send(response.status)
-            /*if(response.status==200){ 
+            if(response.status==200){ 
               const d = response.data;
               (lib.checkConnectionHeader(d.XFRC))? res.send(d): res.status(500).json({error:'Internal Server Error'});   
             }else{
