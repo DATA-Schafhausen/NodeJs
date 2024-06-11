@@ -26,15 +26,15 @@ router.use(bodyParser.urlencoded({limit: 2500000, extended: false}))
     const querytype = req.params.typ; 
     const connectorToken=lib.getConnectionHeader();
     const EncData = req.body;       
-    res.send(JSON.stringify(lib.checkConnectionHeader(connectorTokenft)))
-    /*if(lib.checkConnectionHeader(connectorTokenft)==true){
-      //try{
+     
+    if(lib.checkConnectionHeader(connectorTokenft)==true){
+      try{
             const customConfig = {
               headers: new Headers({
               'Content-Type': 'application/json',
               })            
             };
-            /*const response = await axios.post(
+            const response = await axios.post(
               `${Domaine}/backend/API/mcenter/mykorrekturen/MYKorrekturen.php`,
               JSON.stringify({ 
                 T:querytype,  
@@ -44,10 +44,10 @@ router.use(bodyParser.urlencoded({limit: 2500000, extended: false}))
                 XFRC: connectorToken }),
               customConfig);
             //QUERY SUCCESSFUL
-             res.send(response.status)
             if(response.status==200){ 
-              const d = response.data;
-              (lib.checkConnectionHeader(d.XFRC))? res.send(d): res.status(500).json({error:'Internal Server Error'});   
+              res.status(200).json({error:'works'});
+              //const d = response.data;
+              //(lib.checkConnectionHeader(d.XFRC))? res.send(d): res.status(500).json({error:'Internal Server Error'});   
             }else{
               res.status(500).json({error:'Nook'});
             }
@@ -56,7 +56,7 @@ router.use(bodyParser.urlencoded({limit: 2500000, extended: false}))
         }
     }else{
         res.status(500).json({error:'ConnectionHeader'});
-    }*/
+    }
      
   });
   
