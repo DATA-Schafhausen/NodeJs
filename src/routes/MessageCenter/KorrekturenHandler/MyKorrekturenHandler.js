@@ -25,9 +25,9 @@ router.use(bodyParser.urlencoded({limit: 2500000, extended: false}))
     const connectorTokenft = req.params.ctoken;
     if(lib.checkConnectionHeader(connectorTokenft)==true){
       const EncData = req.body;       
-      const querytype = req.params.typ; 
-      const connectorToken=lib.getConnectionHeader();
       try{
+        const querytype = req.params.typ; 
+        const connectorToken=lib.getConnectionHeader();
             const customConfig = {
               headers: new Headers({
               'Content-Type': 'application/json',
