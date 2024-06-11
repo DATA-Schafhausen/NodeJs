@@ -48,13 +48,13 @@ router.use(bodyParser.urlencoded({limit: 2500000, extended: false}))
               const d = response.data;
               (lib.checkConnectionHeader(d.XFRC))? res.send(d): res.status(500).json({error:'Internal Server Error'});   
             }else{
-              res.status(500).json({error:'Internal Server Error'});
+              res.status(500).json({error:'Nook'});
             }
         }catch(error){
-            res.status(500).json({error:'Internal Server Error'});
+            res.status(500).json({error:'Trycatch'});
         }
     }else{
-        res.status(500).json({error:'Internal Server Error'});
+        res.status(500).json({error:'ConnectionHeader'});
     }
      
   });
