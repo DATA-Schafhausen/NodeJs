@@ -26,12 +26,7 @@ router.use(bodyParser.urlencoded({limit: 2500000, extended: false}))
     const querytype = req.params.typ; 
     const connectorToken=lib.getConnectionHeader();
     const EncData = req.body;       
-    res.send(JSON.stringify({ 
-      T:querytype,  
-      E:EncData.E,
-      I:req.header('x-forwarded-for')?req.header('x-forwarded-for').split(',')[0]:(req.socket.remoteAddress?req.socket.remoteAddress:IP.address()),//req.socket.remoteAddress, 
-      F:EncData.F?EncData.F:'',
-      XFRC: connectorToken }))
+    res.send(JSON.stringify(lib.checkConnectionHeader(connectorTokenft)))
     /*if(lib.checkConnectionHeader(connectorTokenft)==true){
       //try{
             const customConfig = {
