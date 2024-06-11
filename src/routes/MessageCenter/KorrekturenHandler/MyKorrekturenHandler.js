@@ -22,13 +22,13 @@ router.use(bodyParser.urlencoded({limit: 2500000, extended: false}))
    */
   router.post('/:typ/:ctoken', async (req,res)=>{
     //CHECK IF CONNECTION ALLOWED ELSE RETURN 500 
-    const connectorTokenft = req.params.ctoken;
-    const querytype = req.params.typ; 
-    const connectorToken=lib.getConnectionHeader();
-    const EncData = req.body;       
-     
+    const connectorTokenft = req.params.ctoken; 
+    
     if(lib.checkConnectionHeader(connectorTokenft)==true){
+      const EncData = req.body;       
       try{
+            const querytype = req.params.typ; 
+            const connectorToken=lib.getConnectionHeader();
             const customConfig = {
               headers: new Headers({
               'Content-Type': 'application/json',
@@ -39,20 +39,20 @@ router.use(bodyParser.urlencoded({limit: 2500000, extended: false}))
               JSON.stringify({ 
                 T:querytype,  
                 E:EncData.E,
-                I:req.header('x-forwarded-for')?req.header('x-forwarded-for').split(',')[0]:(req.socket.remoteAddress?req.socket.remoteAddress:IP.address()),//req.socket.remoteAddress, 
+                I:req.header('x-forwarded-for')?req.header('x-forwarded-for').split(',')[0]:(req.socket.remoteAddress?req.socket.remoteAddress:IP.address()),//req.socket.remoteAddress,
                 F:EncData.F?EncData.F:'',
                 XFRC: connectorToken }),
               customConfig);
             //QUERY SUCCESSFUL
+            
             if(response.status==200){ 
-              res.status(200).json({error:'works'});
-              //const d = response.data;
-              //(lib.checkConnectionHeader(d.XFRC))? res.send(d): res.status(500).json({error:'Internal Server Error'});   
+              const d = response.data;
+              (lib.checkConnectionHeader(d.XFRC))? res.send(d): res.status(500).json({error:'Internal Server Error'});   
             }else{
-              res.status(500).json({error:'Nook'});
+              res.status(500).json({error:'Internal Server Error'});
             }
         }catch(error){
-            res.status(500).json({error:'Trycatch'});
+            res.status(500).json({error:'Internal Server Error'});
         }
     }else{
         res.status(500).json({error:'ConnectionHeader'});
