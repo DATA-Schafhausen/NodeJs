@@ -17,6 +17,7 @@ router.use(function(req,res,next){
 const LoginHandler=require('./LoginHandler/LoginHandler');   
 const KorrekturenHandler=require('./KorrekturenHandler/KorrekturenHandler');   
 const MyKorrekturenHandler=require('./KorrekturenHandler/MyKorrekturenHandler');   
+const MyBemerkungenHandler=require('./BemerkungenHandler/MyBemerkungenHandler');   
 const ContextHandler=require('./ContextCalls/ContextCalls');        
 /**
  * SUB-ROUTING  
@@ -25,5 +26,6 @@ router.use('/route/login', LoginHandler);
 router.use('/route/context', ContextHandler);     
 router.use('/route/correctionrequests', KorrekturenHandler);     
 router.use('/route/mycorrections', MyKorrekturenHandler);     
+router.use('/route/mybemerkungen', MyBemerkungenHandler);     
 
 module.exports = router;
