@@ -4,8 +4,9 @@ const IP = require('ip');
 const bodyParser = require('body-parser');
 const axios = require('axios'); 
 const lib = require('../../../Utils/connectorHeader');
-const Domaine=lib.getDomain();
+const Domaine=lib.getDomain();  
 router.use(function(req,res,next){
+  //Test Origin header
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
   res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
