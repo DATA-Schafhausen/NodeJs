@@ -20,11 +20,18 @@ const Track=require('./TimeTracking/TimeTracking');
  */
 router.use('/normal/terminal', Track);  
 
+const Urlaub=require('./Urlaub/Urlaub'); 
+/**
+ * URLAUB ROUTES
+ * Urlaub: normal/terminal/urlaub/:typ/:ctoken
+ */
+router.use('/normal/terminal', Urlaub);  
+
 
 const Auswertung=require('./Auswertung/Auswertung'); 
 /**
  * AUSWERTUNG ROUTES
- * Auswertung: normal/terminal/Auswertung/:typ/:ctoken
+ * Auswertung: normal/terminal/auswertung/:typ/:ctoken
  */
 router.use('/normal/terminal', Auswertung);  
 
