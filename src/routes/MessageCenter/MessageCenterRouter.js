@@ -19,6 +19,7 @@ const KorrekturenHandler=require('./KorrekturenHandler/KorrekturenHandler');
 const MyKorrekturenHandler=require('./KorrekturenHandler/MyKorrekturenHandler');   
 const MyBemerkungenHandler=require('./BemerkungenHandler/MyBemerkungenHandler');   
 const MyUrlaubHandler=require('./UrlaubHandler/MyUrlaubHandler');   
+const UrlaubAnsichtHandler=require('./AnsichtenUrlaub/UrlaubAnsichtenHandler');   
 const ContextHandler=require('./ContextCalls/ContextCalls');        
 /**
  * SUB-ROUTING  
@@ -29,5 +30,6 @@ router.use('/route/correctionrequests', KorrekturenHandler);
 router.use('/route/mycorrections', MyKorrekturenHandler);     
 router.use('/route/mybemerkungen', MyBemerkungenHandler);     
 router.use('/route/myurlaub', MyUrlaubHandler);     
+router.use('/route/urlaubansicht', UrlaubAnsichtHandler);     
 
 module.exports = router;
