@@ -98,6 +98,8 @@ Link: https://dull-lime-bull-gown.cyclic.app
 |   POST | <pre><code>/api/v1/app/normal/terminal/track/:typ/:ctoken</code></pre>                | TIMETRACKING                            |  
 |   POST | <pre><code>/api/v1/app/normal/terminal/auswertung/:typ/:ctoken</code></pre>           | AUSWERTUNG                              |  
 |   POST | <pre><code>/api/v1/app/normal/terminal/urlaub/:typ/:ctoken</code></pre>               | URLAUB                                  |  
+|   POST | <pre><code>/api/v1/app/normal/terminal/mitarbeiter/:typ/:ctoken</code></pre>          | MITARBEITER-WIDGET                      |  
+
 
 </details>
 

@@ -35,6 +35,12 @@ const Auswertung=require('./Auswertung/Auswertung');
  */
 router.use('/normal/terminal', Auswertung);  
 
+const Mitarbeiter=require('./Mitarbeiter/Mitarbeiter'); 
+/**
+ * Mitarbeiter ROUTES
+ * Auswertung: normal/terminal/mitarbeiter/:ctoken
+ */
+router.use('/normal/terminal', Mitarbeiter);  
 
 
 const Login=require('./Login/Login'); 
