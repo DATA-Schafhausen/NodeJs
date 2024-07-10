@@ -69,7 +69,7 @@ const QR=require('./Login/Logforms/Qr');
  * LOGIN FORMEN ROUTES
  * QR : normal/terminal/qr/:typ/:ctoken
  */
-router.use('/normal/terminal', Qr);  
+router.use('/normal/terminal', QR);  
 
 const Cred=require('./Login/Logforms/Cred'); 
 /**
