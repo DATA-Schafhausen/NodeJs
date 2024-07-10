@@ -95,6 +95,7 @@ Link: https://dull-lime-bull-gown.cyclic.app
 |   POST | <pre><code>/api/v1/app/normal/terminal/login/:typ/:ctoken</code></pre>                | ACTIVATE,IMPORT,VERIFY                  | 
 |   POST | <pre><code>/api/v1/app/normal/terminal/pin/:typ/:ctoken</code></pre>                  | PIN LOGIN                               |  
 |   POST | <pre><code>/api/v1/app/normal/terminal/cred/:typ/:ctoken</code></pre>                 | CRED LOGIN                              |  
+|   POST | <pre><code>/api/v1/app/normal/terminal/qr/:typ/:ctoken</code></pre>                   | QR LOGIN                                |  
 |   POST | <pre><code>/api/v1/app/normal/terminal/track/:typ/:ctoken</code></pre>                | TIMETRACKING                            |  
 |   POST | <pre><code>/api/v1/app/normal/terminal/auswertung/:typ/:ctoken</code></pre>           | AUSWERTUNG                              |  
 |   POST | <pre><code>/api/v1/app/normal/terminal/urlaub/:typ/:ctoken</code></pre>               | URLAUB                                  |  
