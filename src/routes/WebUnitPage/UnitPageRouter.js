@@ -13,11 +13,10 @@ router.use(function(req,res,next){
 /**
  * IMPORT SUB-ROUTES
  */
-const Activate=require('./Activate/Activate');           
-const RootPass=require('./RootPass/ActivateRootPass');           
+const UnitPage=require('./WebUnit/Unit');                      
 /**
  * SUB-ROUTING
  */     
-router.use('/webunit', Activate);     
+router.use('/webunit', UnitPage);     
   
 module.exports = router;
