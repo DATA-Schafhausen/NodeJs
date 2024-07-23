@@ -41,6 +41,7 @@ const WebTerminal=require('./src/routes/WebTerminal/TerminalRouter');
 const SignupNewUnit=require('./src/routes/SignupNewUnit'); 
 const Encryption=require('./src/routes/Encryption/EncryptionRouter');  
 const UnitActivation= require('./src/routes/UnitActivation/UnitActivationRouter');
+const UnitPageRouter= require('./src/routes/WebUnitPage/UnitPageRouter');
 const Profile= require('./src/routes/ProfileRoutes/ProfileRouter');
 const Widgets= require('./src/routes/DashboardRoutes/Widgets');
 const Login= require('./src/routes/WebLogin/LoginRouter');
@@ -50,6 +51,7 @@ const AdminRouter= require('./src/routes/AdminPanel/AdminRouter');
 app.use('/api/v1/keygen', Encryption);
 app.use('/api/v1/signup', SignupNewUnit);  
 app.use('/api/v1/start', UnitActivation);  
+app.use('/api/v1/u', UnitPageRouter);  
 app.use('/teampage', TeamPageRoutes); 
 app.use('/api/v1/web', WebTerminal);    
 app.use('/api/v1/weblogin', Login); //-------------------------------------------> WEBLOGIN
