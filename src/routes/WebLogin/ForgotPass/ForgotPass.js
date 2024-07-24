@@ -18,7 +18,7 @@ router.use(bodyParser.urlencoded({ extended: false }))
  * @Route /api/v1/route/fp/connectorToken
  * FORGOT PASS 
  */
-router.post('/:ctoken', async (req,res)=>{
+router.post('/r/:ctoken', async (req,res)=>{
     
     //CHECK IF CONNECTION ALLOWED ELSE RETURN 500
     const connectorTokenft = req.params.ctoken; 
