@@ -14,10 +14,12 @@ router.use(function(req,res,next){
  * IMPORT SUB-ROUTES
  */
 const UnitLogin=require('./UnitLogin/UnitLogin');           
+const ForgotPass=require('./ForgotPass/ForgotPass');           
 /**
  * SUB-ROUTING
  */
 //router.use('/route/timeshift', Standorte);     
 router.use('/route/unit', UnitLogin);     
+router.use('/route/fp', ForgotPass);     
   
 module.exports = router;
