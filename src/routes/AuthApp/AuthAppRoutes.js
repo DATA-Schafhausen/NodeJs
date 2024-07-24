@@ -10,13 +10,19 @@ router.use(function(req,res,next){
     res.header('Access-Control-Allow-Methods', 'POST, HEAD, GET, OPTIONS');
     next();
 }); 
+
+
+
+const Login=require('./Login/Login'); 
 /**
- * IMPORT SUB-ROUTES
+ * Login ROUTE auth/login/:typ/:ctoken
+ * 
  */
-const ProfileHead=require('./Profile/ProfileHead');           
-/**
- * SUB-ROUTING
- */
-router.use('/route/header', ProfileHead);     
-  
+router.use('/auth', Login);  
+
+
+
+
+
+
 module.exports = router;

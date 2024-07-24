@@ -70,9 +70,11 @@ app.use('/api/v1/controller', AdminRouter); //--------------------------------> 
  /* //////////////////////////////////////////////////////////////////////////////////////////////////////////
  * IMPORTS */
 const AppNormalTerminalRoutes=require('./src/routes/AppNormalTerminal/AppNormalTerminalRoutes'); 
+const AuthAppRoutes=require('./src/routes/AuthApp/AuthAppRoutes'); 
  /* //////////////////////////////////////////////////////////////////////////////////////////////////////////
  * ROUTES */
 app.use('/api/v1/app', AppNormalTerminalRoutes);
+app.use('/api/v1/authapp', AuthAppRoutes);
 
  
  

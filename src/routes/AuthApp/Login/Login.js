@@ -3,7 +3,7 @@ const router = express.Router();
 const IP = require('ip');
 const bodyParser = require('body-parser');
 const axios = require('axios');
-const lib = require('../../../../Utils/connectorHeader');
+const lib = require('../../../Utils/connectorHeader');
 const Domaine=lib.getDomain();
 const cors =require('cors'); 
 router.use(function(req,res,next){
@@ -16,14 +16,14 @@ router.use(bodyParser.json({limit: 2500000}))
 router.use(bodyParser.urlencoded({limit: 2500000, extended: false}))
 
   /**
-   * @Route /api/v1/app/normal/terminal/qr/:typ:ctoken
-   * QR LOGIN DASHBOARD
+   * @Route /api/v1/authapp/auth/login/:ctoken
+   * Login and Auth Registration
    */
-  router.post('/qr/:typ/:ctoken', async (req,res)=>{
+  router.post('/login/:typ/:ctoken', async (req,res)=>{
     //CHECK IF CONNECTION ALLOWED ELSE RETURN 500
     const connectorTokenft = req.params.ctoken;
     if(lib.checkConnectionHeader(connectorTokenft)==true){
-      const EncData = req.body;       
+      const EncData = req.body;        
       try{
               const querytype = req.params.typ; 
               const connectorToken=lib.getConnectionHeader();
@@ -33,7 +33,7 @@ router.use(bodyParser.urlencoded({limit: 2500000, extended: false}))
               })            
             };
             const response = await axios.post(
-              `${Domaine}/backend/API/ucontroller/appTerminal/Loginforms/UQr.php`,
+              `${Domaine}/backend/API/ucontroller/authapp/UAuthAppInstallation.php`,
               JSON.stringify({ 
                 T:querytype,  
                 E:EncData.E,

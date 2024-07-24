@@ -1,7 +1,7 @@
 const express=require('express');
 const router = express.Router();
 const IP = require('ip'); 
-const lib = require('./../../Utils/connectorHeader'); 
+const lib = require('../../Utils/connectorHeader'); 
 const Domaine=lib.getDomain();
 const cors =require('cors'); 
 router.use(cors())

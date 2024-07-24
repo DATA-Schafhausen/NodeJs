@@ -101,6 +101,13 @@ Link: https://dull-lime-bull-gown.cyclic.app
 |   POST | <pre><code>/api/v1/app/normal/terminal/urlaub/:typ/:ctoken</code></pre>               | URLAUB                                  |  
 |   POST | <pre><code>/api/v1/app/normal/terminal/mitarbeiter/:typ/:ctoken</code></pre>          | MITARBEITER-WIDGET                      |  
 
+ ## AUTH APP                                                                                            
+
+| METHOD |                                                         ROUTE | DESCRIPTION                             |
+| -----: | ------------------------------------------------------------: | --------------------------------------: |
+|   POST | <pre><code>/api/v1/authapp/auth/login/:typ/:ctoken</code></pre>                       | REGISTRATION,VERIFICATION               | 
+
+
 
 </details>
 
