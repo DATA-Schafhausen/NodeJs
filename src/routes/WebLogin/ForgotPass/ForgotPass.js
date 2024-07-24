@@ -15,7 +15,7 @@ router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({ extended: false }))
 
 /**
- * @Route /api/v1/fp/connectorToken
+ * @Route /api/v1/route/unit/fp/connectorToken
  * FORGOT PASS 
  */
 router.post('/fp/:ctoken', async (req,res)=>{
