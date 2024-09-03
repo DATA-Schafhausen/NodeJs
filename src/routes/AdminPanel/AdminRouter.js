@@ -13,6 +13,7 @@ router.use(function(req,res,next){
 /**
  * IMPORT SUB-ROUTES
  */
+const Protokoll=require('./Protokoll/Protokoll');     
 const Standorte=require('./Standorte/Standorte');     
 const Abteilungen=require('./Abteilungen/Abteilung');     
 const Bereiche=require('./Bereiche/Bereiche');     
@@ -26,6 +27,7 @@ const Auswertung=require('./Auswertung/Auswertung');
 /**
  * SUB-ROUTING
  */
+router.use('/route/protokoll', Protokoll);  
 router.use('/route/standort', Standorte);  
 router.use('/route/abteilung', Abteilungen);  
 router.use('/route/bereiche', Bereiche);  
