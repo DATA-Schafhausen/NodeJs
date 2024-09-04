@@ -2,9 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const http = require('http'); 
 const app = express();
+const server = require('http').createServer(app);
 const lib = require('./src/Utils/connectorHeader');  
 const PORT = 3000;
-const io = require('socket.io')(http);
+const io = require('socket.io')(server);
 app.use(cors()) 
 /**
  * USE REDIRECT
