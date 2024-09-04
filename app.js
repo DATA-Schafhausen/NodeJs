@@ -5,7 +5,12 @@ const app = express();
 const server = http.createServer(app);
 const lib = require('./src/Utils/connectorHeader');  
 const PORT = 3000;
-const io = require('socket.io')(server);
+const io = require('socket.io')(server, {
+	cors: {
+		origin: "*",
+		methods: [ "GET", "POST" ]
+	}
+});
 app.use(cors()) 
 /**
  * USE REDIRECT
