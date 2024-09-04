@@ -4,10 +4,21 @@ const http = require('http');
 const app = express(); 
 const lib = require('./src/Utils/connectorHeader');  
 const PORT = 3000;
-const io = require('socket.io')(http.createServer(app), {
-	cors: {
-		origin: "*" 
-	}
+const socketIO = require('socket.io')
+const server = http.createServer(app);
+
+const io = socketIO(server, {
+
+  cors: {
+
+    origin: '*',
+
+    methods: ['GET', 'POST'],
+
+    credentials: true
+
+  }
+
 });
 app.use(cors()) 
 /**
@@ -18,7 +29,8 @@ app.use(function(req,res,next){
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
   res.header('Access-Control-Allow-Methods', 'POST, HEAD, GET, OPTIONS');
   next(); 
-});   
+});  
+io.origins(['*']); 
 io.on('open', (socket) => {
 
   //console.log('New client connected');
