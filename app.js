@@ -13,9 +13,7 @@ const io = socketIO(server, {
 
     origin: '*',
 
-    methods: ['GET', 'POST'],
-
-    credentials: true
+    methods: ['GET', 'POST'] 
 
   }
 
@@ -29,8 +27,7 @@ app.use(function(req,res,next){
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
   res.header('Access-Control-Allow-Methods', 'POST, HEAD, GET, OPTIONS');
   next(); 
-});  
-io.origins(['*']); 
+});   
 io.on('open', (socket) => {
 
   //console.log('New client connected');
