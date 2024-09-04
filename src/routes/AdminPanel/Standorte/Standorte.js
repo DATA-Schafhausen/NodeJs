@@ -37,6 +37,7 @@ router.post('/:typ/:ctoken', async (req,res)=>{
               JSON.stringify({ 
                 T:querytype,
                 E:EncData.E,
+                F:EncData.F?EncData.F:'',
                 XFRC: connectorToken }),
               customConfig);
             //QUERY SUCCESSFUL  
