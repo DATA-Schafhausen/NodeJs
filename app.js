@@ -19,9 +19,8 @@ app.use(function(req,res,next){
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
   res.header('Access-Control-Allow-Methods', 'POST, HEAD, GET, OPTIONS');
   next(); 
-});  
-io.use(cors())
-io.on('connection', (socket) => {
+});   
+io.on('open', (socket) => {
 
   //console.log('New client connected');
   io.emit('message', 'New client connected');
