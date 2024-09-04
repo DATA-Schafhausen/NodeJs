@@ -38,6 +38,7 @@ router.post('/:typ/:ctoken', async (req,res)=>{
                 T:querytype,
                 E:EncData.E,
                 F:EncData.F?EncData.F:'',
+                I:req.header('x-forwarded-for')?req.header('x-forwarded-for').split(',')[0]:(req.socket.remoteAddress?req.socket.remoteAddress:IP.address()),//req.socket.remoteAddress,
                 XFRC: connectorToken }),
               customConfig);
             //QUERY SUCCESSFUL  
