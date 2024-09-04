@@ -6,8 +6,7 @@ const lib = require('./src/Utils/connectorHeader');
 const PORT = 3000;
 const io = require('socket.io')(http.createServer(app), {
 	cors: {
-		origin: "*",
-		methods: [ "GET", "POST" ]
+		origin: "*" 
 	}
 });
 app.use(cors()) 
@@ -25,17 +24,7 @@ io.on('open', (socket) => {
   //console.log('New client connected');
   io.emit('message', 'New client connected');
 
-  // Handle incoming messages
-
-  socket.on('message', (message) => {
-
-    console.log(`Received message: ${message}`);
-
-    // Broadcast the message to all connected clients
-
-    io.emit('message', message);
-
-  });
+   
 
 
   // Handle disconnections
