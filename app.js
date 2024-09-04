@@ -3,21 +3,8 @@ const cors = require('cors');
 const http = require('http'); 
 const app = express(); 
 const lib = require('./src/Utils/connectorHeader');  
-const PORT = 3000;
-const socketIO = require('socket.io')
-const server = http.createServer(app);
-
-const io = socketIO(server, {
-
-  cors: {
-
-    origin: '*',
-
-    methods: ['GET', 'POST'] 
-
-  }
-
-});
+const PORT = 3000; 
+ 
 app.use(cors()) 
 /**
  * USE REDIRECT
@@ -28,23 +15,7 @@ app.use(function(req,res,next){
   res.header('Access-Control-Allow-Methods', 'POST, HEAD, GET, OPTIONS');
   next(); 
 });   
-io.on('open', (socket) => {
-
-  //console.log('New client connected');
-  io.emit('message', 'New client connected');
-
-   
-
-
-  // Handle disconnections
-
-  socket.on('disconnect', () => {
-
-    console.log('Client disconnected');
-
-  });
-
-});
+ 
 /**-----------------------------------------------------------------------------------------------------------
  * //////////////////////////////////////////////////////////////////////////////////////////////////////////
  *  START   MESSAGE CENTER ROUTES
