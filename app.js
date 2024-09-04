@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const http = require('http'); 
 const app = express();
-const server = require('http').createServer(app);
+const server = http.createServer(app);
 const lib = require('./src/Utils/connectorHeader');  
 const PORT = 3000;
 const io = require('socket.io')(server);
@@ -19,8 +19,8 @@ app.use(function(req,res,next){
 const chatNamespace = io.of('/chat');
 chatNamespace.on('connection', (socket) => {
 
-  console.log('New client connected');
-
+  //console.log('New client connected');
+  chatNamespace.emit('message', 'New client connected');
 
   // Handle incoming messages
 
