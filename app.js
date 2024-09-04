@@ -48,6 +48,7 @@ const Profile= require('./src/routes/ProfileRoutes/ProfileRouter');
 const Widgets= require('./src/routes/DashboardRoutes/Widgets');
 const Login= require('./src/routes/WebLogin/LoginRouter');
 const AdminRouter= require('./src/routes/AdminPanel/AdminRouter'); 
+const RealTime= require('./src/routes/RealTime/RealTimeRouter'); 
 /* //////////////////////////////////////////////////////////////////////////////////////////////////////////
  * ROUTES */ 
 app.use('/api/v1/keygen', Encryption);
@@ -61,6 +62,7 @@ app.use('/api/v1/weblogin', Login); //------------------------------------------
 app.use('/api/v1/dashboard', Widgets); //-------------------------------------> DASHBOARD
 app.use('/api/v1/profile', Profile); //---------------------------------------> PROFILE
 app.use('/api/v1/controller', AdminRouter); //--------------------------------> ADMIN  
+app.use('/rt', RealTime); //--------------------------------> ADMIN  
 
 
 
