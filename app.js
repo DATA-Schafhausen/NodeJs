@@ -21,11 +21,11 @@ app.use(function(req,res,next){
   res.header('Access-Control-Allow-Methods', 'POST, HEAD, GET, OPTIONS');
   next(); 
 });  
-const chatNamespace = io.of('/chat');
-chatNamespace.on('connection', (socket) => {
+ 
+io.on('connection', (socket) => {
 
   //console.log('New client connected');
-  chatNamespace.emit('message', 'New client connected');
+  io.emit('message', 'New client connected');
 
   // Handle incoming messages
 
@@ -35,7 +35,7 @@ chatNamespace.on('connection', (socket) => {
 
     // Broadcast the message to all connected clients
 
-    chatNamespace.emit('message', message);
+    io.emit('message', message);
 
   });
 
