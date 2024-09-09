@@ -46,6 +46,7 @@ const UnitPageRouter= require('./src/routes/WebUnitPage/UnitPageRouter');
 const NotifierRouter= require('./src/routes/Notifier/NotifierRouter');
 const Profile= require('./src/routes/ProfileRoutes/ProfileRouter');
 const Widgets= require('./src/routes/DashboardRoutes/Widgets');
+const Korrektur= require('./src/routes/Korrekturen/Korrekturen');
 const Login= require('./src/routes/WebLogin/LoginRouter');
 const AdminRouter= require('./src/routes/AdminPanel/AdminRouter'); 
 ////const RealTime= require('./src/routes/RealTime/RealTimeRouter'); 
@@ -60,6 +61,7 @@ app.use('/teampage', TeamPageRoutes);
 app.use('/api/v1/web', WebTerminal);    
 app.use('/api/v1/weblogin', Login); //-------------------------------------------> WEBLOGIN
 app.use('/api/v1/dashboard', Widgets); //-------------------------------------> DASHBOARD
+app.use('/api/v1/korrekturen', Korrektur); //-------------------------------------> KORREKTUREN
 app.use('/api/v1/profile', Profile); //---------------------------------------> PROFILE
 app.use('/api/v1/controller', AdminRouter); //--------------------------------> ADMIN  
 //app.use('/rt', RealTime); //--------------------------------> ADMIN  
