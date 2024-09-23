@@ -42,6 +42,13 @@ const Mitarbeiter=require('./Mitarbeiter/Mitarbeiter');
  */
 router.use('/normal/terminal', Mitarbeiter);  
 
+const Korrektur=require('./Korrektur/Korrektur'); 
+/**
+ * Korrektur ROUTES
+ * Korrektur: normal/terminal/korrektur/:typ/:ctoken
+ */
+router.use('/normal/terminal', Korrektur);  
+
 
 const Login=require('./Login/Login'); 
 /**
