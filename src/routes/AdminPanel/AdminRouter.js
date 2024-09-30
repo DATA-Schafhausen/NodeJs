@@ -24,6 +24,7 @@ const Vertrag=require('./Vertrag/Vertrag');
 const Terminals=require('./Terminals/Terminals');     
 const Einstellungen=require('./Einstellungen/Einstellungen');     
 const Auswertung=require('./Auswertung/Auswertung');     
+const Stammdaten=require('./Stammdaten/Stammdaten');     
 /**
  * SUB-ROUTING
  */
@@ -38,5 +39,6 @@ router.use('/route/vertrag', Vertrag);
 router.use('/route/terminals', Terminals);  
 router.use('/route/auswertung', Auswertung);  
 router.use('/route/einstellungen', Einstellungen);  
+router.use('/route/stammdaten', Stammdaten);  
 
 module.exports = router;
