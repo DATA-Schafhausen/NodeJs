@@ -3,8 +3,7 @@ const cors = require('cors');
 const http = require('http'); 
 const app = express(); 
 const lib = require('./src/Utils/connectorHeader');  
-const PORT = 3000; 
- 
+const PORT = 3000;  
 app.use(cors()) 
 /**
  * USE REDIRECT
@@ -14,8 +13,7 @@ app.use(function(req,res,next){
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
   res.header('Access-Control-Allow-Methods', 'POST, HEAD, GET, OPTIONS');
   next(); 
-});   
- 
+});    
 /**-----------------------------------------------------------------------------------------------------------
  * //////////////////////////////////////////////////////////////////////////////////////////////////////////
  *  START   MESSAGE CENTER ROUTES
@@ -26,10 +24,7 @@ app.use(function(req,res,next){
 const MessageCenterRouter= require('./src/routes/MessageCenter/MessageCenterRouter');
 /* //////////////////////////////////////////////////////////////////////////////////////////////////////////
  * ROUTES */
-app.use('/api/v1/mc', MessageCenterRouter);
-
-
-
+app.use('/api/v1/mc', MessageCenterRouter); 
 /**-----------------------------------------------------------------------------------------------------------
  * //////////////////////////////////////////////////////////////////////////////////////////////////////////
  *  START   WEB-PANEL ROUTES
@@ -48,7 +43,7 @@ const Profile= require('./src/routes/ProfileRoutes/ProfileRouter');
 const Widgets= require('./src/routes/DashboardRoutes/Widgets');
 const Korrektur= require('./src/routes/Korrekturen/Korrekturen');
 const Login= require('./src/routes/WebLogin/LoginRouter');
-const AdminRouter= require('./src/routes/AdminPanel/AdminRouter'); 
+const AdminRouter= require('./src/routes/AdminPanel/AdminRouter');  
 ////const RealTime= require('./src/routes/RealTime/RealTimeRouter'); 
 /* //////////////////////////////////////////////////////////////////////////////////////////////////////////
  * ROUTES */ 
@@ -64,11 +59,7 @@ app.use('/api/v1/dashboard', Widgets); //-------------------------------------> 
 app.use('/api/v1/korrekturen', Korrektur); //-------------------------------------> KORREKTUREN
 app.use('/api/v1/profile', Profile); //---------------------------------------> PROFILE
 app.use('/api/v1/controller', AdminRouter); //--------------------------------> ADMIN  
-//app.use('/rt', RealTime); //--------------------------------> ADMIN  
-
-
-
-
+//app.use('/rt', RealTime); //--------------------------------> ADMIN   
 /**-----------------------------------------------------------------------------------------------------------
  * //////////////////////////////////////////////////////////////////////////////////////////////////////////
  *  START   ANDROID/IOS APP ROUTES
@@ -81,11 +72,7 @@ const AuthAppRoutes=require('./src/routes/AuthApp/AuthAppRoutes');
  /* //////////////////////////////////////////////////////////////////////////////////////////////////////////
  * ROUTES */
 app.use('/api/v1/app', AppNormalTerminalRoutes);
-app.use('/api/v1/authapp', AuthAppRoutes);
-
- 
- 
- 
+app.use('/api/v1/authapp', AuthAppRoutes); 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);   
 });
